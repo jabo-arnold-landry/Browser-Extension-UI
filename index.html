@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header-section">
+        <img src="./assets/images/logo.svg" alt="logo" />
+        <div class="theme-icon" tabindex="0">
+          <img src="./assets//images/icon-moon.svg" alt="switch to dark mode" />
+        </div>
+      </div>
+
+      <section>
+        <div class="filters">
+          <h1>Extensions List</h1>
+          <div class="btn">
+            <button id="all" class="toggle">all</button>
+            <button id="active">active</button>
+            <button id="inactive">inactive</button>
+          </div>
+        </div>
+        <div class="extension-panel"></div>
+      </section>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Jabo Arnold landry</a>.
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

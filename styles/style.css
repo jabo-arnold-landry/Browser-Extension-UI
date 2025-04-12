@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*neutral*/
+  --Neutral900: hsl(227, 75%, 14%);
+  --Neutral800: hsl(226, 25%, 17%);
+  --Neutral700: hsl(225, 23%, 24%);
+  --Neutral600: hsl(226, 11%, 37%);
+  --Neutral300: hsl(0, 0%, 78%);
+  --Neutral200: hsl(217, 61%, 90%);
+  --Neutral100: hsl(0, 0%, 93%);
+  --Neutral0: hsl(200, 60%, 99%);
+
+  /*Red*/
+
+  --Red400: hsl(3, 86%, 64%);
+  --Red500: hsl(3, 71%, 56%);
+  --Red700: hsl(3, 77%, 44%);
+
+  /* Gradient*/
+
+  --LightGradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --DarkGradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  /*typography*/
+  --Weights-400: 400;
+  --weigts-500: 500;
+  --weights-700: 700;
+}
+.dark {
+  background: var(--DarkGradient);
+  color: var(--Neutral0);
+  & .card {
+    background-color: var(--Neutral800);
+    box-shadow: none;
+    & .text-section p {
+      color: var(--Neutral300);
+    }
+  }
+  & .header-section {
+    background-color: var(--Neutral700);
+    & .theme-icon {
+      background-color: var(--Neutral600);
+    }
+  }
+  .card button,
+  button {
+    background-color: var(--Neutral600);
+    color: var(--Neutral200);
+  }
+  .toggle {
+    background-color: var(--Red400);
+    color: var(--Neutral0);
+  }
+  a {
+    color: var(--Neutral200);
+  }
+}
+a:active {
+  color: var(--Neutral200);
+}
+body {
+  background: var(--LightGradient);
+  transition: background 100ms ease-out;
+}
+.header-section {
+  background-color: var(--Neutral0);
+  box-shadow: 1px 1px 6px -2px black;
+  margin: 4rem auto;
+  max-width: min(80%, 90%);
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  & .theme-icon {
+    background-color: var(--Neutral300);
+    padding: 0.6em;
+    border-radius: 0.4em;
+    cursor: pointer;
+  }
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5rem;
+}
+@media (width<40em) {
+  .filters {
+    display: block;
+  }
+}
+.btn {
+  /* margin: -2rem auto; */
+  width: fit-content;
+}
+& h1 {
+  font-size: clamp(2rem, 2vw + 1rem, 1rem);
+}
+.btn button {
+  border-radius: 2rem;
+  padding: 0.7em 1.2rem;
+  font-size: (1rem, 0.8rem);
+  cursor: pointer;
+  border: 1px solid black;
+  text-transform: capitalize;
+  transition: background 200ms ease-out;
+}
+button:hover {
+  background-color: var(--Red400);
+  color: var(--Neutral0);
+}
+button:focus {
+  outline-color: var(--Red500);
+}
+.extension-panel {
+  --grid-min-length: 340px;
+  margin: 2rem 5rem;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(var(--grid-min-length), 100%), 1fr)
+  );
+  gap: 0.5rem;
+  container-type: inline-size;
+}
+.card {
+  background-color: var(--Neutral0);
+  box-shadow: 1px 2px 3px 2px var(--Neutral200);
+  padding: 1rem;
+  border-radius: 0.9rem;
+  width: min(400px, 100%);
+  margin: 0 1em;
+  transition: background 500ms ease-in;
+}
+
+.card button:hover {
+  background-color: var(--Red500);
+  color: var(--Neutral0);
+}
+@scope (.images-text) {
+  :scope {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  img {
+    margin-top: -2rem;
+    width: 3rem;
+  }
+  & .text-section p {
+    color: var(--Neutral600);
+    margin-top: 0.3rem;
+    font-size: 14px;
+    line-height: 1.3rem;
+  }
+}
+@scope (.btns) {
+  :scope {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 1rem;
+    padding: 1rem;
+  }
+  & button {
+    color: var(--Neutral900);
+    text-transform: capitalize;
+    font-weight: var(--weights-500);
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--Neutral200);
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+  }
+}
+
+.toggle-true {
+  background-color: var(--Red500);
+  border-radius: 2rem;
+  padding: 0rem 0.7rem;
+  cursor: pointer;
+  & .circle {
+    background-color: var(--Neutral0);
+    border-radius: 2rem;
+    padding: 0.7rem;
+    margin-top: 0.2rem;
+    transform: translatex(0.6rem);
+  }
+}
+
+.toggle-false {
+  background-color: var(--Neutral300);
+  border-radius: 2rem;
+  padding: 0rem 0.7rem;
+  cursor: pointer;
+  & .circle {
+    background-color: var(--Neutral0);
+    border-radius: 2rem;
+    padding: 0.7rem;
+    margin-top: 0.2rem;
+    transform: translatex(-0.6rem);
+  }
+}
+.toggle {
+  background-color: var(--Red500);
+  color: var(--Neutral0);
+}
